@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Training_Search>
+			<codePool>local</codePool>
+			<active>true</active>
+		</Training_Search>
+	</modules>
+</config>

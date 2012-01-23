@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Training_Search>
+			<version>1.0.0</version>
+		</Training_Search>
+	</modules>
+	
+	<frontend>
+		<routers>
+			<training_search>
+				<use>standard</use>
+				<args>
+					<module>Training_Search</module>
+					<frontName>heyo</frontName>
+				</args>
+			</training_search>
+		</routers>
+	</frontend>
+
+	<admin>
+		<routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<training_search after="Mage_Adminhtml">Training_Search_Adminhtml</training_search>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+	</admin>
+	<!--
+	<adminhtml>
+		<layout>
+			<updates>
+				<training_search>
+					<file>training/search.xml</file>
+				</training_search>
+			</updates>
+		</layout>
+	</adminhtml>
+	-->
+</config>

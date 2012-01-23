@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config>
+	<menu>
+		<catalog>
+			<children>
+				<training_search translate="title">
+					<title>Search</title>
+					<sort_order>30</sort_order>
+					<action></action>
+				</training_search>
+			</children>
+		</catalog>
+	</menu>
+
+	<acl> 					<!-- Acl Section -->
+		<resources>
+			<admin>
+				<children>
+					<training_search translate="title">
+						<title>Search</title>
+						<sort_order>30</sort_order>
+					</training_search>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+
+</config>
+
