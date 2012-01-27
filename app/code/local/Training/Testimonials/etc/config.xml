@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Training_Testimonials>
+            <version>1.0.0</version>
+        </Training_Testimonials>
+    </modules>
+
+    <frontend>
+        <routers>
+            <testimonials>  <!-- Unique Name -->
+                <use>standard</use>
+                <args>
+                    <module>Training_Testimonials</module>
+                    <frontName>testimonials</frontName>
+                </args>
+            </testimonials>
+        </routers>
+        
+        <layout>
+            <updates>
+                <training_testimonials> 
+                    <file>testimonials.xml</file>
+                </training_testimonials>
+            </updates>
+        </layout>      
+    </frontend>
+
+    <global>
+        <blocks>
+            <testimonials>  <!-- Group Name -->
+                <class>Training_Testimonials_Block</class>
+            </testimonials>
+        </blocks>
+        <helpers>
+            <testimonials>  <!-- Group Name -->
+                <class>Training_Testimonials_Helper</class>
+            </testimonials>
+        </helpers>
+      <models>
+        <testimonials>  <!-- group name must be unique and consistent -->
+            <class>Training_Testimonials_Model</class>
+            <resourceModel>testimonials_mysql4</resourceModel>
+        </testimonials>
+        <testimonials_mysql4>
+            <class>Training_Testimonials_Model_Mysql4</class>
+            <entities>
+                <manager>  <!--Model name -->
+                    <table>testimonials</table>
+                </manager>
+            </entities>
+        </testimonials_mysql4>
+      </models>
+      <resources>
+        <testimonials_read>          <!-- group name_ -->
+            <connection>
+                <use>core_read></use>
+        </connection>
+        </testimonials_read> 
+        <testimonials_write>          <!-- group name_ -->
+            <connection>
+                <use>core_write></use>
+            </connection>
+        </testimonials_write> 
+      </resources>
+    </global>
+
+</config>
