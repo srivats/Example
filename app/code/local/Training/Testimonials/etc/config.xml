@@ -19,13 +19,38 @@
         
         <layout>
             <updates>
-                <training_testimonials> 
+                <testimonials> 
                     <file>testimonials.xml</file>
-                </training_testimonials>
+                </testimonials>
             </updates>
         </layout>      
     </frontend>
 
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <training_testimonials after="Mage_Adminhtml">Training_Testimonials_Adminhtml</training_testimonials>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+<!--
+     <admin>
+        <routers>
+            <testimonials>
+                <use>admin</use>
+                <args>
+                    <module>Training_Testimonials</module>
+                    <frontname>admintest</frontname>
+                </args>
+            </testimonials>
+        </routers>
+    </admin>
+-->
     <global>
         <blocks>
             <testimonials>  <!-- Group Name -->

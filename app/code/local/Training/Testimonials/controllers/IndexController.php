@@ -24,18 +24,20 @@ class Training_Testimonials_IndexController extends Mage_Core_Controller_Front_A
 		}
 	}
 
-	public function blockAction()
+	public function postAction()
 	{
-		$block=new Training_Testimonials_Block_Front();
-		$block->setTemplate('front.phtml');
-		echo $block->toHtml();
-		//var_dump($block->getLayoutFile());
-	}
+		$params=$this->getRequest()->getParams();
 
-	public function moduleAction()
-	{
-		$config=Mage::getModel('core/config')->loadModulesConfiguration();
-		var_dump($config);
+		//$data=new Training_Testimonials_Model_Manager();
+		$data=Mage::getModel('testimonials/manager');
+		$data->setName($params['name']);
+		$data->setEmail($params['email']);
+		$data->setTestimonials($params['testimonial-text']);
+		if($data->save())
+		{
+		 Mage::getSingleton('core/session')->addSuccess('Thank you for your feedback');
+		 $this->_redirect('testimonials/');
+		}
 	}
 
 }
