@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+	<menu>
+		<customer>
+			<children>
+				<training_testimonials translate="title">
+					<title>Testimonials</title>
+					<sort_order>100</sort_order>
+					<action>adminhtml/back/index</action>
+				</training_testimonials>
+			</children>
+		</customer>
+	</menu>
+</config>
